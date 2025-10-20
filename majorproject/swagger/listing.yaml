@@ -1,0 +1,36 @@
+paths:
+  /listing/add:
+    post:
+      summary: Add a new listing
+      tags: [Listing]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: number
+      responses:
+        200:
+          description: Listing creation response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                    example: 1
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      listingId:
+                        type: string

@@ -1,0 +1,36 @@
+paths:
+  /user/create:
+    post:
+      summary: Create a new user
+      tags: [User]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                age:
+                  type: integer
+      responses:
+        200:
+          description: User creation response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                    example: 1
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      userId:
+                        type: string
